@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import "./chat.css";
 import EmojiPicker from 'emoji-picker-react';
 
@@ -7,6 +7,12 @@ const Chat = () => {
     const [open, setOpen] = useState(false);
     const [text, setText] = useState("");
   
+    const endRef = useRef(null);
+
+    useEffect(()=>{
+      endRef.current?.scrollIntoView({behaviour: "smooth"});
+    },[]); 
+    // run only once, empty brackets, getting back at latest message.
   
 
   const handleEmoji = (e) => {
@@ -71,6 +77,9 @@ const Chat = () => {
             <span>1 min ago</span>
           </div>
         </div>
+        {/* whenever i'm refereshing my page, I'm getting back to the first message of my chat but i want to be at the latest message of my chat. So, to implement this i'M going to use "reference". NOTE: It's under all our messsages. Will use useRef hook. With this to handle ref, useEffect will use.*/}
+        <div ref={endRef}></div>
+
       </div>
       <div className="bottom">
         <div className="icons">
