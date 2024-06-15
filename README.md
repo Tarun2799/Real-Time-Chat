@@ -6,7 +6,7 @@ I'm going to store the image URL from Firebase Storage in the database, using th
 You can check the Basic Architecture here of the application:
 https://app.eraser.io/workspace/qWMqUBrOAVOqTYWQPyNF?origin=share
 
-![alt text](image.png)
+![alt text](image-1.png)
 
 This above is linked with this below image
-![alt text](image-1.png)
+![alt text](image.png)
